@@ -105,6 +105,9 @@
      # etc
      discord spotify
    ];
+   environment.gnome.excludePackages = with pkgs; [
+     epiphany geary gnome-tour gnome-music totem
+   ];
 
    programs.fish.enable = true;
    programs.starship.enable = true;
