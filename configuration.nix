@@ -80,8 +80,7 @@
     description = "mb";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.fish;
-    packages = with pkgs; [
-    #  thunderbird
+    packages = with pkgs; [ #  thunderbird
     ];
   };
 
@@ -115,6 +114,14 @@
    virtualisation.docker.enable = true;
    programs.nix-index.enable = true;
    programs.command-not-found.enable = false;
+
+   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+   nix.gc = {
+     automatic = true;
+     dates = "weekly";
+     options = "--delete-older-than 14d";
+   };
+   nix.settings.auto-optimise-store = true;
 
 
   # Some programs need SUID wrappers, can be configured further or are
