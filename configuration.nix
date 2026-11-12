@@ -77,7 +77,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."mb" = {
     isNormalUser = true;
-    description = "Miklas";
+    description = "mb";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
     packages = with pkgs; [
@@ -112,6 +112,7 @@
    programs.fish.enable = true;
    programs.starship.enable = true;
    virtualisation.podman.enable = true;
+   virtualisation.docker.enable = true;
    programs.nix-ld.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
