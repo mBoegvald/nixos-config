@@ -78,7 +78,7 @@
   users.users."mb" = {
     isNormalUser = true;
     description = "mb";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.fish;
     packages = with pkgs; [
     #  thunderbird
@@ -95,7 +95,7 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
    environment.systemPackages = with pkgs; [
      # basics
-     git neovim wget curl unzip ripgrep fd gcc gnumake nodejs
+     git neovim wget curl unzip ripgrep fd gcc gnumake nodejs comma
 
      # work
      python3 poetry ruff
@@ -113,7 +113,9 @@
    programs.starship.enable = true;
    virtualisation.podman.enable = true;
    virtualisation.docker.enable = true;
-   programs.nix-ld.enable = true;
+   programs.nix-index.enable = true;
+   programs.command-not-found.enable = false;
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
