@@ -100,6 +100,7 @@
      # work
      python3 poetry ruff
      kubectl k9s kubelogin kubernetes-helm azure-cli google-cloud-sdk
+     claude-code
 
      # etc
      discord spotify
